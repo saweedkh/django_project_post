@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+
+{% block title %}
+Track Page
+{% endblock title %}
+
+{% block content %}
+<h1>Enter Your Tracking Code</h1>
+    <form method="post" action="{% url 'order_detail' %}">
+        {% csrf_token %}
+        <label for="tracking_code">Tracking Code:</label>
+        <input type="text" id="tracking_code" name="tracking_code" required>
+        <button type="submit">Track Order</button>
+    </form>
+{% endblock content %}
